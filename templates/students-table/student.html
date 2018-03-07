@@ -17,8 +17,8 @@
     {% include 'header.html' %}
     <div class="container">
         <div class="row nav_but text-center">
-          <a href="/" class="btn btn-primary">Розклад уроків</a>
-          <a href="/teacher/" class="btn">Розклад для вчителів</a>
+          <a href="/" class="btn btn-primary">Розклад занять</a>
+          <a href="/teacher/" class="btn">Розклад для викладачів</a>
         </div><br>
     </div>
 
@@ -26,14 +26,14 @@
       <div class="container navrow">
         <div class="row text-center">
           <form action="/students-table/" method="get">
-              <span>Клас</span>
+              <span>Група</span>
               <input type="text" name="q" list="groupName" autocomplete="off"><br>
                   <datalist id="groupName">
                      {% for i in group_name %}
                         <option value="{{ i.group_name }}">
                      {% endfor %}
                   </datalist>
-            <input type="submit" value="Розклад уроків">
+            <input type="submit" value="Розклад занять">
          </form>
         </div>
       </div>
@@ -42,18 +42,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>
 
     <script>
       new WOW().init();
     </script>
-    <script>
-      $(document).ready(
-          function() {
-              $("html").niceScroll({cursorcolor:"#000"});
-          }
-      );
-    </script>
+
   </body>
 </html>

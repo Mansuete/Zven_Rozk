@@ -75,12 +75,3 @@ input::-webkit-calendar-picker-indicator {
 	border: 5px;
 }
 
-
-
-@media screen and (max-width: 640px){
-	header .overline{
-		background: red;
-		height:5px;
-		margin:5px;
-		}
-}

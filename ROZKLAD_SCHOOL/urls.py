@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('ControlPanel.urls')),
+    url(r'^admin', admin.site.urls),
+    url(r'^', include('ControlPanel1.urls')),
 
 ]  \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

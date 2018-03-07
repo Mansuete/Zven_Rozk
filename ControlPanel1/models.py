@@ -57,20 +57,6 @@ class Room(models.Model):
         verbose_name = 'Номер Кабінета'
         verbose_name_plural = 'Номери Кабінетів'
 
-
-class Week(models.Model):
-    week_name = models.CharField(max_length=10, blank=True, null=True, default=None)
-    created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
-    def __str__(self):
-        return "Навчальний тиждень %s" % self.week_name
-
-    class Meta:
-        verbose_name = 'Навчальний тиждень'
-        verbose_name_plural = 'Навчальні тижні'
-
-
 class Day(models.Model):
     day_name = models.CharField(max_length=14, blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -100,7 +86,6 @@ class LessonNumber(models.Model):
 
 class Timetable(models.Model):
     group = models.ForeignKey(Group, blank=True, null=True, default=None, on_delete=False)
-    week = models.ForeignKey(Week, blank=True, null=True, default=None, on_delete=False)
     day = models.ForeignKey(Day, blank=True, null=True, default=None, on_delete=False)
     lesson_number = models.ForeignKey(LessonNumber, blank=True, null=True, default=None, on_delete=False)
     teacher = models.ForeignKey(Teacher, blank=True, null=True, default=None, on_delete=False)

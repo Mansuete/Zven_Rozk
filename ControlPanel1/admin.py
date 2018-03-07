@@ -47,16 +47,6 @@ class RoomAdmin(admin.ModelAdmin):
 admin.site.register(Room, RoomAdmin)
 
 
-class WeekAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Week._meta.fields]
-
-    class Meta:
-        model = Week
-
-
-admin.site.register(Week, WeekAdmin)
-
-
 class DayAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Day._meta.fields]
 
