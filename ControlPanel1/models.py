@@ -2,7 +2,8 @@ from django.db import models
 
 
 class Group(models.Model):
-    group_name = models.CharField(max_length=6, blank=True, null=True, default=None)
+    group_name = models.CharField(max_length=10, blank=True, null=True, default=None)
+    group_weekend = models.BooleanField(default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -16,7 +17,7 @@ class Group(models.Model):
 
 
 class Teacher(models.Model):
-    teacher_name = models.CharField(max_length=24, blank=True, null=True, default=None)
+    teacher_name = models.CharField(max_length=48, blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -98,13 +99,13 @@ class LessonNumber(models.Model):
 
 
 class Timetable(models.Model):
-    group = models.ForeignKey(Group, blank=True, null=True, default=None)
-    week = models.ForeignKey(Week, blank=True, null=True, default=None)
-    day = models.ForeignKey(Day, blank=True, null=True, default=None)
-    lesson_number = models.ForeignKey(LessonNumber, blank=True, null=True, default=None)
-    teacher = models.ForeignKey(Teacher, blank=True, null=True, default=None)
-    lesson_name = models.ForeignKey(LessonName, blank=True, null=True, default=None)
-    room_number = models.ForeignKey(Room, blank=True, null=True, default=None)
+    group = models.ForeignKey(Group, blank=True, null=True, default=None, on_delete=False)
+    week = models.ForeignKey(Week, blank=True, null=True, default=None, on_delete=False)
+    day = models.ForeignKey(Day, blank=True, null=True, default=None, on_delete=False)
+    lesson_number = models.ForeignKey(LessonNumber, blank=True, null=True, default=None, on_delete=False)
+    teacher = models.ForeignKey(Teacher, blank=True, null=True, default=None, on_delete=False)
+    lesson_name = models.ForeignKey(LessonName, blank=True, null=True, default=None, on_delete=False)
+    room_number = models.ForeignKey(Room, blank=True, null=True, default=None, on_delete=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 

@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response
 from ControlPanel.models import Timetable, Group, Teacher
 
 
+
 def search_form(request):
     return render_to_response('students-table/student.html')
 
