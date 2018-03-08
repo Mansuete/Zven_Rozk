@@ -13,7 +13,6 @@ dayofweek = date.getDay();
 hours = date.getHours();
 minutes = date.getMinutes();
 
-
 for(var i = 1; i < 6; i++) {
     if (dayofweek == i && ((hours == 15 && minutes <= 50) ||(hours < 15))) {
         // Закраска всього робочого дня
@@ -132,6 +131,8 @@ else{
  lessTimer();
  function lessTimer(){
 var date = new Date();
+
+
     dayofweek = date.getDay();
     hours = date.getHours();
     minutes = date.getMinutes();

@@ -20,8 +20,8 @@
         {% include 'header.html' %}
         <div class="container">
             <div class="row nav_but text-center">
-              <a href="/" class="btn btn-primary">Розклад уроків</a>
-              <a href="/teacher" class="btn">Розклад для вчителів</a>
+              <a href="/" class="btn btn-primary">Розклад занять</a>
+              <a href="/teacher" class="btn">Розклад для викладачів</a>
             </div>
             <br>
         </div>
@@ -30,7 +30,7 @@
           <div class="container navrow">
             <div class="row text-center">
               <form action="/students-table/" method="get">
-                  <span>Клас</span>
+                  <span>Група</span>
                 <input type="text" name="q" list="groupName" autocomplete="off"><br>
                   <datalist id="groupName">
                      {% for i in group_name %}
@@ -38,9 +38,9 @@
                      {% endfor %}
                   </datalist>
                   <div class="row text-center">
-                    <span>Клас з такою назвою не знайдено!</span>
+                    <span>Групу з такою назвою не знайдено!</span>
                   </div>
-                <input type="submit" value="Розклад уроків">
+                <input type="submit" value="Розклад занять">
              </form>
             </div>
           </div>

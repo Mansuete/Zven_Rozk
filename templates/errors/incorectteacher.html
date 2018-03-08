@@ -17,15 +17,15 @@
     {% include 'header.html' %}
         <div class="container">
             <div class="row nav_but text-center">
-              <a href="/" class="btn">Розклад уроків</a>
-              <a href="/teacher" class="btn btn-primary">Розклад для вчителів</a>
+              <a href="/" class="btn">Розклад занять</a>
+              <a href="/teacher" class="btn btn-primary">Розклад для викладачів</a>
             </div><br>
         </div>
         <section id="navigation">
           <div class="container navrow">
             <div class="row text-center">
              <form action="/teacher-table/" method="get">
-                  <span>Вчитель</span>
+                  <span>Викладач</span>
                     <input type="text" name="q" placeholder="Прізвище Ім'я По-батькові" style="width: 300px" autocomplete="off" list="teacherName"><br>
                          <datalist id="teacherName">
                              {% for i in timetable_teacher %}
@@ -33,9 +33,9 @@
                              {% endfor %}
                           </datalist>
                  <div class="row text-center">
-                     <span>Вчителя з такими даними не знайдено!</span>
+                     <span>Викладача з такими даними не знайдено!</span>
                  </div>
-                <input type="submit" value="Розклад уроків">
+                <input type="submit" value="Розклад занять">
              </form>
             </div>
           </div>
