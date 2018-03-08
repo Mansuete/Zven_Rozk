@@ -22,7 +22,7 @@ class Teacher(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "Вчитель %s" % self.teacher_name
+        return "Викладач %s" % self.teacher_name
 
     class Meta:
         ordering = ('teacher_name',)
