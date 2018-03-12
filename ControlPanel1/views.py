@@ -327,7 +327,7 @@ def tablepage(request):
                     week1_day5_lesson7 = i
                 elif str(i.lesson_number) == 'Номер уроку 8':
                     week1_day5_lesson8 = i
-        q = q[0]
+        q = q[0:2]
         return render_to_response('students-table/tablepage.html', locals(),)
     else:
         group_name = Group.objects.filter()
